@@ -1,11 +1,11 @@
-package com.kir.test.news
+package com.kir.test.presentation.news
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.kir.test.R
+import com.kir.test.base.BaseViewHolder2
 
 class DateViewHolder(itemView: View) : BaseViewHolder2(itemView) {
 

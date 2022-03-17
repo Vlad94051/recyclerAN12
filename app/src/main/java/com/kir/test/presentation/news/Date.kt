@@ -1,4 +1,4 @@
-package com.kir.test.news
+package com.kir.test.presentation.news
 
 data class Date(
     val date: String

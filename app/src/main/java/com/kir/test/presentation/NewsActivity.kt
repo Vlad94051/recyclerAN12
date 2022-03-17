@@ -1,10 +1,11 @@
-package com.kir.test
+package com.kir.test.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.kir.test.news.NewsAdapter
+import com.kir.test.R
+import com.kir.test.presentation.news.NewsAdapter
 
 class NewsActivity : AppCompatActivity() {
 

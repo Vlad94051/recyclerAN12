@@ -1,7 +1,8 @@
-package com.kir.test.news
+package com.kir.test.presentation.news
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.kir.test.base.BaseViewHolder2
 import java.lang.IllegalStateException
 
 class NewsAdapter : RecyclerView.Adapter<BaseViewHolder2>() {

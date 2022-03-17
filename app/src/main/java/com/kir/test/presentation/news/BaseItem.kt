@@ -1,4 +1,4 @@
-package com.kir.test.news
+package com.kir.test.presentation.news
 
 sealed class BaseItem {
     object SuperItem : BaseItem()

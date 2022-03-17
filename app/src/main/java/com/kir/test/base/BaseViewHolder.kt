@@ -1,4 +1,4 @@
-package com.kir.test
+package com.kir.test.base
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

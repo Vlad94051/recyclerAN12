@@ -1,34 +1,30 @@
-package com.kir.test
+package com.kir.test.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.kir.test.news.BaseItem
-import com.kir.test.news.Date
-import com.kir.test.news.News
+import androidx.lifecycle.viewModelScope
+import com.kir.test.domain.getInteractor
+import com.kir.test.presentation.news.BaseItem
+import com.kir.test.presentation.news.Date
+import com.kir.test.presentation.news.News
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class NewsViewModel : ViewModel() {
     private val _news = MutableLiveData<List<BaseItem>>()
     val news: LiveData<List<BaseItem>> get() = _news
+
+    private val newsInteractor by lazy { getInteractor() }
 
     init {
         loadNews()
     }
 
     private fun loadNews() {
-        val news = listOf(
-            Date("14.02.22"),
-            News("Title1"),
-            News("Title2"),
-            News("Title3"),
-            News("Title4"),
-            Date("15.02.22"),
-            News("Title5"),
-            News("Title6"),
-            News("Title7"),
-        )
-
-        _news.value = news
+       viewModelScope.launch(Dispatchers.IO) {
+          _news.postValue(newsInteractor.getNewsItems())
+        }
     }
 
     fun onMegaButtonClicked() {
